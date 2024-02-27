@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--GOOGLE FONTS-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url(./images/background3.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* background-color: rgb(181, 170, 245); */
+
+        }
+
+        .main_container {
+            /* border: 2px solid rgb(59, 59, 59); */
+            width: 80%;
+            margin: 50px auto;
+            box-shadow: inset 0px 1px 1px 0px rgba(97, 96, 96, 0.664), 0px 50px 100px -20px rgba(97, 112, 116, 0.822), 0px 30px 60px -30px rgba(255, 250, 250, 0.3);
+
+        }
+
+
+        .main_container:hover {
+            box-shadow: 0px 2px 4px rgba(199, 192, 192, 0.4), 0px 7px 13px -3px rgba(230, 219, 219, 0.3), inset 0px -3px 0px rgba(0, 0, 0, 0.2);
+        }
+
+
+        nav {
+            /* border: 1px solid gray; */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0PX 10px;
+            background-color: rgb(204, 245, 243);
+            box-shadow: 0 3px 6px rgba(255, 250, 250, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+            position: sticky;
+            top: 0px;
+            padding: 10px;
+
+
+
+        }
+
+        .logo_container {
+            width: 10%;
+            /* border: 1px solid gray; */
+        }
+
+        .list_container {
+            /* border: 1px solid gray; */
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+            list-style: none;
+            margin: auto;
+            font-size: x-large;
+            font-weight: bold;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        li a {
+            text-decoration: none;
+            color: rgb(0, 81, 255);
+        }
+
+        li a:hover {
+            /* background-color:blue; */
+            color: rgb(255, 51, 0);
+        }
+
+        .search_container {
+            /* border: 1px solid gray; */
+            width: 20%;
+            /* margin: auto;
+
+        } 
+
+        .search_container input {
+            padding: 7px;
+            border-radius: 10px;
+            width: 60%;
+            background-color: lightcyan;
+            font-size: large;
+            font-weight: bold;
+            color: rgb(132, 204, 132);
+            margin: 0PX 10px;
+        }
+
+        .search_container button {
+            width: 20%;
+            font-weight: bold;
+            border-radius: 10px;
+            font-size: small;
+            padding: 10px;
+            color: rgb(226, 48, 48);
+            background-color: rgb(158, 255, 158)
+        }
+
+        .search_container button:hover {
+            background-color: rgb(94, 94, 255);
+            cursor: pointer;
+            color: rgb(250, 180, 180);
+            /* transform: translateY(1px); */
+
+        }
+
+        .menu_container {
+            width: 5%;
+            /* border: 1px solid gray;  */
+            font-size: xx-large;
+            font-weight: bold;
+            color: blue;
+            text-align: end;
+            display: none;
+
+        }
+
+        table {
+            /* border: 1px solid rgba(20, 15, 16, 0.753);  */
+            border-collapse: collapse;
+            width: 100%;
+            text-align: center;
+            margin: auto;
+            background-color: rgb(248, 248, 225)
+        }
+
+        thead {
+            background-color: rgb(226, 223, 192);
+            color: rgb(247, 127, 127);
+        }
+
+        thead tr th {
+            padding: 10px;
+            font-weight: bold;
+            font-size: x-large;
+
+        }
+
+        tbody tr td {
+            padding: 10px;
+            font-weight: bold;
+            font-size: large;
+            color: rgba(114, 113, 113, 0.856);
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: rgb(247, 236, 237);
+
+        }
+
+        tfoot tr td {
+            padding: 10px;
+            text-align: end;
+            background-color: rgb(167, 167, 167);
+
+        }
+
+        tfoot button {
+            padding: 5px 10px 5px 10px;
+            margin-right: 50px;
+        }
+
+        .Submit {
+            background-color: green;
+            font-size: x-large;
+            font-weight: bold;
+            border-radius: 10px;
+            color: darkseagreen;
+
+        }
+
+        .Submit:hover {
+            transition: all 0.5s ease-in-out;
+            background-color: lightgreen;
+            color: rgb(255, 14, 14);
+
+        }
+
+        .Cancel {
+            background-color: rgb(255, 14, 14);
+            font-size: x-large;
+            font-weight: bold;
+            border-radius: 10px;
+            color: darkseagreen;
+        }
+
+        .Cancel:hover {
+            transition: all 0.5s ease-in-out;
+            background-color: rgb(235, 144, 238);
+            color: rgb(14, 70, 255);
+
+        }
+
+        body {
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .footer {
+            background: #000;
+            padding: 30px 0px;
+            font-family: 'Play', sans-serif;
+            text-align: center;
+        }
+
+        .footer .row {
+            width: 100%;
+            margin: 1% 0%;
+            padding: 0.6% 0%;
+            color: gray;
+            font-size: 0.8em;
+        }
+
+        .footer .row a {
+            text-decoration: none;
+            color: gray;
+            transition: 0.5s;
+        }
+
+        .footer .row a:hover {
+            color: #fff;
+        }
+
+        .footer .row ul {
+            width: 100%;
+        }
+
+        .footer .row ul li {
+            display: inline-block;
+            margin: 0px 30px;
+        }
+
+        .footer .row a i {
+            font-size: 2em;
+            margin: 0% 1%;
+        }
+
+        h1{
+            text-align: center;
+            
+        }
+
+        @media screen and (min-width:200px) and (max-width:767px) {
+            .main_container {
+                /* border: 2px solid rgb(59, 59, 59); */
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                box-shadow: inset 0px 1px 1px 0px rgba(97, 96, 96, 0.664), 0px 50px 100px -20px rgba(97, 112, 116, 0.822), 0px 30px 60px -30px rgba(255, 250, 250, 0.3);
+            }
+
+            nav {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                border-radius: 1px;
+
+
+            }
+
+            .list_container {
+                display: flex;
+                font-size: small;
+                width: 90%;
+            }
+
+            .search_container {
+                display: none;
+            }
+
+            .menu_container {
+                display: block;
+                width: 10%;
+                margin: 10px;
+            }
+
+            .menu_container:hover {
+                color: red;
+            }
+
+            table {
+                width: 100%;
+                border: 3px solid rgb(104, 104, 104);
+                margin: 0;
+                padding: 0;
+            }
+
+            thead {
+                background-color: rgb(155, 236, 152);
+                color: rgb(247, 127, 127);
+                width: 100%;
+            }
+
+            thead tr th {
+                padding: 10px 0px;
+                font-weight: bold;
+                font-size: small;
+
+            }
+
+            tbody tr td {
+                padding: 10px 0px;
+                font-weight: bold;
+                font-size: small;
+                color: rgba(114, 113, 113, 0.856);
+            }
+
+            tbody tr:nth-child(even) {
+                background-color: rgb(247, 236, 237);
+
+            }
+
+            tfoot tr td {
+                padding: 5px;
+                text-align: end;
+                background-color: rgb(167, 167, 167);
+
+            }
+
+            tfoot button {
+                /* padding: 5px 10px 5px 10px; */
+                padding: 0;
+                margin-right: 20px;
+            }
+
+            .Submit {
+                background-color: green;
+                font-size: large;
+                font-weight: bold;
+                border-radius: 5px;
+                color: darkseagreen;
+                padding: 5px;
+
+            }
+
+            .Submit:hover {
+                transition: all 0.5s ease-in-out;
+                background-color: lightgreen;
+                color: rgb(255, 14, 14);
+
+            }
+
+            .Cancel {
+                background-color: rgb(255, 14, 14);
+                font-size: large;
+                font-weight: bold;
+                border-radius: 5px;
+                color: darkseagreen;
+                padding: 5px;
+            }
+
+            .Cancel:hover {
+                transition: all 0.5s ease-in-out;
+                background-color: rgb(235, 144, 238);
+                color: rgb(14, 70, 255);
+
+            }
+
+            .footer {
+                text-align: left;
+                padding: 5%;
+            }
+
+            .footer .row ul li {
+                display: block;
+                margin: 10px 0px;
+                text-align: left;
+            }
+
+            .footer .row a i {
+                margin: 0% 3%;
+            }
+           h1{
+            font-size: small;
+           }
+        }
+
+        @media screen and (min-width:768px) and (max-width:1300px) {
+            .main_container {
+                /* border: 2px solid rgb(59, 59, 59); */
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                box-shadow: inset 0px 1px 1px 0px rgba(97, 96, 96, 0.664), 0px 50px 100px -20px rgba(97, 112, 116, 0.822), 0px 30px 60px -30px rgba(255, 250, 250, 0.3);
+            }
+
+            nav {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                border-radius: 1px;
+
+
+            }
+
+            .list_container {
+                display: flex;
+                font-size: small;
+                width: 90%;
+            }
+
+            .search_container {
+                display: none;
+            }
+
+            .menu_container {
+                display: block;
+                width: 10%;
+                margin: 10px;
+            }
+
+            .menu_container:hover {
+                color: red;
+            }
+
+            table {
+                width: 100%;
+                border: 3px solid rgb(104, 104, 104);
+                margin: 0px auto;
+                padding: 10px;
+                height: 600px;
+
+            }
+
+            thead {
+                background-color: rgb(155, 236, 152);
+                color: rgb(247, 127, 127);
+                width: 100%;
+            }
+
+            thead tr th {
+                padding: 20px 0px;
+                font-weight: bold;
+                font-size:large;
+
+            }
+
+            tbody tr td {
+                padding: 5px;
+                font-weight: bold;
+                font-size: small;
+                color: rgba(114, 113, 113, 0.856);
+            }
+
+            tbody tr:nth-child(even) {
+                background-color: rgb(247, 236, 237);
+
+            }
+
+            tfoot tr td {
+                padding: 5px;
+                text-align: end;
+                background-color: rgb(167, 167, 167);
+
+            }
+
+            tfoot button {
+                /* padding: 5px 10px 5px 10px; */
+                padding: 10px;
+                margin-right: 20px;
+            }
+
+            .Submit {
+                background-color: green;
+                font-size: large;
+                font-weight: bold;
+                border-radius: 5px;
+                color: darkseagreen;
+                padding: 5px;
+
+            }
+
+            .Submit:hover {
+                transition: all 0.5s ease-in-out;
+                background-color: lightgreen;
+                color: rgb(255, 14, 14);
+
+            }
+
+            .Cancel {
+                background-color: rgb(255, 14, 14);
+                font-size: large;
+                font-weight: bold;
+                border-radius: 5px;
+                color: darkseagreen;
+                padding: 5px;
+            }
+
+            .Cancel:hover {
+                transition: all 0.5s ease-in-out;
+                background-color: rgb(235, 144, 238);
+                color: rgb(14, 70, 255);
+
+            }
+
+            .footer {
+                text-align: left;
+                padding: 5%;
+            }
+
+            .footer .row ul li {
+                display: block;
+                margin: 10px 0px;
+                text-align: left;
+            }
+
+            .footer .row a i {
+                margin: 0% 3%;
+            }
+            
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="main_container">
+        <table border="3px solid">
+           
+            <nav>
+                <!-- <div class="logo_container"><img src="./images/groww-logo-light.svg" alt=""></div> -->
+                <div class="list_container">
+                    <li><a href="./Task3.html" target="_blank">Home</a></li>
+                    <!-- <li><a href="./index.html" target="_blank">Table</a></li> -->
+                    <li><a href="./registerform.html" target="_blank">registration</a></li>
+                    <li><a href="./loginform.html" target="_blank">Login</a></li>
+                    <li><a href="./Task4.html" target="_blank">Calculator</a></li>
+                </div>
+                <!-- <div class="search_container">
+                <input type="search" placeholder="Type a Search">
+                <button>Search</button>
+            </div> -->
+                <div class="menu_container">&#9776;</div>
+            </nav>
+            
+                <h1> Candidates Table</h1>
+           
+
+            <thead>
+                <tr>
+                    <th>S.No.</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Mobile</th>
+                    <th>City</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>01.</td>
+                    <td>Rakesh</td>
+                    <td>rkjat@gmail.com</td>
+                    <td>9478568775</td>
+                    <td>Jaipur</td>
+                </tr>
+
+                <tr>
+                    <td>02.</td>
+                    <td>Sohan</td>
+                    <td>sohanjat@gmail.com</td>
+                    <td>9987654789</td>
+                    <td>Delhi</td>
+                </tr>
+
+                <tr>
+                    <td>03.</td>
+                    <td>Balveer</td>
+                    <td>veerbl@gmail.com</td>
+                    <td>9929475864</td>
+                    <td>Ajmer</td>
+                </tr>
+
+                <tr>
+                    <td>04.</td>
+                    <td>Yogesh</td>
+                    <td>yesh857@gmail.com</td>
+                    <td>9414578965</td>
+                    <td>Sikar</td>
+                </tr>
+
+                <tr>
+                    <td>05.</td>
+                    <td>Parkash</td>
+                    <td>pk765@gmail.com</td>
+                    <td>9898955454</td>
+                    <td>Udaipur</td>
+                </tr>
+
+            </tbody>
+            <tfoot>
+                <tr>
+
+                    <td colspan="5"><button class="Submit">Submit</button>
+                        <button class="Cancel">Cancel</button>
+                    </td>
+
+                </tr>
+            </tfoot>
+
+
+        </table>
+
+        <footer>
+            <div class="footer">
+                <div class="row">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-youtube"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                </div>
+
+                <div class="row">
+                    <ul>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Our Services</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Career</a></li>
+                    </ul>
+                </div>
+
+                <div class="row">
+                    INFERNO Copyright © 2021 Inferno - All rights reserved || Designed By: Mahesh
+                </div>
+            </div>
+        </footer>
+        <!-- <button class="link_button"><a href="./registerform.html">Please Click See 2 <sup>nd</sup> task</a></button> -->
+    </div>
+
+</body>
+
+</html>
